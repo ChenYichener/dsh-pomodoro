@@ -1,0 +1,58 @@
+{
+  "name": "dsh-pomodoro",
+  "version": "0.1.0",
+  "description": "DSH focus timer: a distraction-free Pomodoro panel in the sidebar with focus/short/long rounds, a per-round goal, daily stats and a completion log.",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "chenyichen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChenYichener/dsh-pomodoro.git"
+  },
+  "homepage": "https://github.com/ChenYichener/dsh-pomodoro#readme",
+  "bugs": {
+    "url": "https://github.com/ChenYichener/dsh-pomodoro/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "pomodoro",
+    "focus-timer",
+    "productivity"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "README.zh.md",
+    "LICENSE",
+    "docs/screenshot.png"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  }
+}

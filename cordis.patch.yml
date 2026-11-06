@@ -1,0 +1,8 @@
+# dsh-pomodoro bundle patch.
+#
+# One row carries both halves: the Node half is an inert host plugin (the timer
+# runs entirely in the page), the browser half (dsh.client manifest) registers
+# the "番茄钟" sidebar entry directly below "写作" and its main panel.
+- insert:
+    - id: dsh-pomodoro
+      name: 'dsh-pomodoro'
